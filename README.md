@@ -53,6 +53,17 @@ superr-selector/
 │   ├── rank_players.py                               # Ranking engine, player cards & CSV exporters
 │   ├── visualizations.py                             # Matplotlib & Seaborn charts
 │   └── main.py                                       # Master pipeline runner & test suite
+├── tests/                                            # Automated test suite
+│   └── test_pipeline.py                              # Formal unittest validation suite
+├── frontend/                                         # Interactive React 19 + Vite Web Application
+│   ├── src/
+│   │   ├── components/                               # Dashboard, Leaderboards, Comparison, Lab, Portal
+│   │   ├── data/platform_data.json                   # Consolidated dataset for web platform
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── public/                                       # 300 DPI publication charts & downloadable artifacts
+│   ├── package.json
+│   └── tailwind.config.js
 ├── output/                                           # Final submission artifacts
 │   ├── top_10_batters_under_pressure.csv             # Official Top 10 Batters CSV
 │   ├── top_10_bowlers_under_pressure.csv             # Official Top 10 Bowlers CSV
@@ -103,6 +114,37 @@ python src/rank_players.py
 
 # Generate publication visualizations
 python src/visualizations.py
+
+# Run comprehensive test suite
+python -m unittest discover tests
+```
+
+---
+
+## 🌐 Interactive Web Platform (Rajasthan Royals Theme)
+
+The project includes an interactive web application built with **React 19, Vite, Tailwind CSS, Lucide icons, and Framer Motion**, styled in the official **Rajasthan Royals** visual identity (`#E5007D` Royal Pink, `#17132E` Deep Navy, `#641078` Purple):
+
+### Features:
+1. **Executive Dashboard**: Real-time KPI counters (883 matches, 200,999 balls, 150 qualified batters, 151 qualified bowlers, 40.8% high-pressure deliveries).
+2. **Interactive Leaderboards**: Filter by Top 10 or All 150+ Qualifiers, search by player or team, sort across any metric, and click rows to expand detailed player cards with clutch deltas and match rationale.
+3. **Head-to-Head Player Comparison Tool**: Compare any 2 batters or any 2 bowlers side-by-side with metric comparison bars, winner badges, and radar metrics.
+4. **Analytics Lab & Visualizations**: Interactive data distributions and full 300 DPI high-resolution modal previews of all publication charts with download buttons.
+5. **Unstop Submission Portal**: Interactive checklist with 1-click list copy, verified drop-down guidance, and direct downloads for `METHODOLOGY_REPORT.md` and CSV artifacts.
+
+### Running the Web Platform:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+To generate a standalone production build:
+```bash
+cd frontend
+npm run build
+npm run preview
 ```
 
 ---
